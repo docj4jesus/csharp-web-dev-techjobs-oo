@@ -42,10 +42,34 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
-        /*public override string ToString()
+        public override string ToString() //consider making this a dictionary with Key, Value Pairs--or is that complicating things too much??          
         {
-            return (\n ;
-        } */
+            string output = "";
 
+            if (Name.Equals(""))
+            {
+                Name = "Data not available";
+            }
+            if (EmployerName.Value.Equals("") || EmployerName.Value == null)
+            {
+                EmployerName.Value = "Data not available";
+            }
+            if (EmployerLocation.Value.Equals("") || EmployerLocation.Value == null)
+            {
+                EmployerLocation.Value = "Data not available";
+            }
+            if (JobCoreCompetency.Value.Equals("") || JobCoreCompetency.Value == null)
+            {
+                JobCoreCompetency.Value = "Data not available";
+            }
+            if (JobType.Value.Equals("") || JobType.Value == null)
+            {
+                JobType.Value = "Data not available";
+            }
+
+            output = $"\n ID: {Id} \n Name: {Name} \n Employer: {EmployerName.Value} \n Location: {EmployerLocation.Value} \n Position Type: {JobType.Value} \n Core Competency: {JobCoreCompetency.Value} \n";
+
+            return output;
+        }
     }
 }
